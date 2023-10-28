@@ -22,17 +22,13 @@ function App() {
     }
   }
   const onAdoptPet=(id)=>{
-    const findPetObj = pets.find(pet => pet.id === id)
-    findPetObj.isAdopted = true
-    
-    const newPets = pets.map(pet => {
+    const copyPets = structuredClone(pets)
+    copyPets.forEach(pet => {
       if(pet.id === id){
-        return findPetObj
-      }else{
-        return pet
+        pet.isAdopted = true
       }
     })
-    setPets(newPets)
+    setPets(copyPets)
   }
   console.log(pets)
   return (
