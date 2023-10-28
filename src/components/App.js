@@ -21,6 +21,10 @@ function App() {
       .then(petsData => setPets(petsData))
     }
   }
+  const onAdoptPet=(id)=>{
+    const findPetObj = pets.find(pet => pet.id === id)
+    findPetObj.isAdopted = true
+  }
   console.log(pets)
   return (
     <div className="ui container">
@@ -33,7 +37,7 @@ function App() {
             <Filters onChangeType={onChangeType} onFindPetsClick={onFindPetsClick}/>
           </div>
           <div className="twelve wide column">
-            <PetBrowser />
+            <PetBrowser onAdoptPet={onAdoptPet}/>
           </div>
         </div>
       </div>
