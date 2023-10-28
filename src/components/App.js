@@ -37,7 +37,7 @@ function App() {
             <Filters onChangeType={onChangeType} onFindPetsClick={onFindPetsClick}/>
           </div>
           <div className="twelve wide column">
-            <PetBrowser onAdoptPet={onAdoptPet}/>
+            <PetBrowser pets={pets} onAdoptPet={onAdoptPet}/>
           </div>
         </div>
       </div>

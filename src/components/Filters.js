@@ -1,8 +1,6 @@
 import React from "react";
 
 function Filters({onChangeType, onFindPetsClick}) {
-
-
   return (
     <div className="ui form">
       <h3>Animal type</h3>
