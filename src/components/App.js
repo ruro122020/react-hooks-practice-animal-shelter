@@ -11,8 +11,17 @@ function App() {
     setFilters({type: filtersType})
   }
   const onFindPetsClick=()=>{
-    
+    if(filters.type === 'all'){
+      fetch('http://localhost:3001/pets')
+      .then(res => res.json())
+      .then(petsData => setPets(petsData))
+    }else{
+      fetch(`http://localhost:3001/pets?type=${filters.type}`)
+      .then(res => res.json())
+      .then(petsData => setPets(petsData))
+    }
   }
+  console.log(pets)
   return (
     <div className="ui container">
       <header>
