@@ -24,6 +24,15 @@ function App() {
   const onAdoptPet=(id)=>{
     const findPetObj = pets.find(pet => pet.id === id)
     findPetObj.isAdopted = true
+    
+    const newPets = pets.map(pet => {
+      if(pet.id === id){
+        return findPetObj
+      }else{
+        return pet
+      }
+    })
+    setPets(newPets)
   }
   console.log(pets)
   return (
