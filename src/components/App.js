@@ -24,7 +24,7 @@ function App() {
             <Filters />
           </div>
           <div className="twelve wide column">
-            <PetBrowser />
+            <PetBrowser pets={pets}/>
           </div>
         </div>
       </div>
