@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Filters from "./Filters";
 import PetBrowser from "./PetBrowser";
 
@@ -7,8 +6,12 @@ function App() {
   const [pets, setPets] = useState([]);
   const [filters, setFilters] = useState({ type: "all" });
 
-  const onChangeType =()=>{
+  const onChangeType =(filtersType)=>{
     //update filters.type state
+    setFilters({type: filtersType})
+  }
+  const onFindPetsClick=()=>{
+    
   }
   return (
     <div className="ui container">
@@ -18,7 +21,7 @@ function App() {
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
-            <Filters onChangeType={onChangeType}/>
+            <Filters onChangeType={onChangeType} onFindPetsClick={onFindPetsClick}/>
           </div>
           <div className="twelve wide column">
             <PetBrowser />
