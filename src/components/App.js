@@ -7,6 +7,9 @@ function App() {
   const [pets, setPets] = useState([]);
   const [filters, setFilters] = useState({ type: "all" });
 
+  const onChangeType =()=>{
+    //update filters.type state
+  }
   return (
     <div className="ui container">
       <header>
@@ -15,7 +18,7 @@ function App() {
       <div className="ui container">
         <div className="ui grid">
           <div className="four wide column">
-            <Filters />
+            <Filters onChangeType={onChangeType}/>
           </div>
           <div className="twelve wide column">
             <PetBrowser />
