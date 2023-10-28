@@ -2,9 +2,8 @@ import React from "react";
 
 import Pet from "./Pet";
 
-function PetBrowser({pets}) {
-  const displayPets = pets.map(pet => <Pet key={pet.id} pet={pet}/>)
-  return <div className="ui cards">{displayPets}</div>;
+function PetBrowser() {
+  return <div className="ui cards">PET COMPONENT SHOULD GO HERE</div>;
 }
 
 export default PetBrowser;
